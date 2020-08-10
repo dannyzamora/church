@@ -14,11 +14,18 @@ import { autoPlay } from "react-swipeable-views-utils";
 
 import Img from "gatsby-image"
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
     carousel: {
-        maxWidth: 850
+        margin: "0 auto",
+        maxWidth: 800
+    }, [theme.breakpoints.down('md')]: {
+        maxWidth: 500
+    },
+    views: {
+        maxHeight: 450
     }
-});
+
+}));
 
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
@@ -43,7 +50,7 @@ const Carousel = ({ images }) => {
     const maxSteps = images.length;
     return (
         <Paper elevation={0} className={classes.carousel}>
-            <div>
+            <div >
                 <AutoPlaySwipeableViews
                     axis={"x"}
                     enableMouseEvents
@@ -52,10 +59,10 @@ const Carousel = ({ images }) => {
                 >
                     {images.map((item, index) => {
                         return (
-                            <div key={index}>
+                            <div key={index} >
                                 {Math.abs(activeStep - index) <= 2 ? (
-                                    <Card>
-                                        <CardMedia>
+                                    <Card className={classes.views} >
+                                        <CardMedia >
                                             <Img
                                                 fluid={item.node.childImageSharp.fluid}
                                             />

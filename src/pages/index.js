@@ -1,12 +1,23 @@
 import React from "react"
-import Layout from "../components/Layout"
 import { Link, graphql } from "gatsby";
+
+import { makeStyles } from '@material-ui/core/styles';
+import Container from '@material-ui/core/Container';
 
 import Carousel from "../components/Carousel"
 
+const useStyles = makeStyles({
+  container: {
+    placeItems: 'center'
+  }
+});
 const Home = ({ data }) => {
+  const classes = useStyles();
   return (
-    <Layout><Carousel images={data.allFile.edges} /></Layout>
+
+    <Container className={classes.container}>
+      <Carousel images={data.allFile.edges} />
+    </Container>
   )
 }
 
@@ -16,7 +27,7 @@ export const query = graphql`
         edges {
           node {
             childImageSharp {
-              fluid {
+              fluid(quality: 100) {
                 ...GatsbyImageSharpFluid
               }
             }
