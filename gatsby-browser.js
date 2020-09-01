@@ -1,6 +1,19 @@
 const React = require("react")
 const Layout = require("./src/components/layout").default
 const CssBaseline = require('@material-ui/core/CssBaseline').default
+const createMuiTheme = require('@material-ui/core/styles/createMuiTheme').default
+const ThemeProvider = require(`@material-ui/core/styles`).ThemeProvider
+
+const theme = createMuiTheme({
+
+    palette: {
+        background: {
+            default: '#E8E8E8',
+            paper: "#DCDCDC"
+        }
+    }
+
+});
 
 exports.wrapPageElement = ({ element, props }) => {
     // props provide same data to Layout as Page element will get
@@ -10,8 +23,11 @@ exports.wrapPageElement = ({ element, props }) => {
 
 exports.wrapRootElement = ({ element }) => {
     return (
-        <CssBaseline>
-            {element}
-        </CssBaseline>
+        <ThemeProvider theme={theme} >
+            <CssBaseline>
+                {element}
+            </CssBaseline>
+        </ThemeProvider>
+
     )
 }

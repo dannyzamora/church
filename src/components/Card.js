@@ -11,17 +11,48 @@ import Avatar from '@material-ui/core/Avatar';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import { red } from '@material-ui/core/colors';
-import FavoriteIcon from '@material-ui/icons/Favorite';
-import ShareIcon from '@material-ui/icons/Share';
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import MoreVertIcon from '@material-ui/icons/MoreVert';
 
+import Img from "gatsby-image"
 
-const BioCard = () => {
+const styles = makeStyles({
+    card: {
+        minWidth: 300
+    }
+})
+
+const MyCard = (props) => {
+    const classes = styles(props);
+    return <Card className={classes.card} {...props} />
+}
+
+const BioCard = ({ fluid, title, description, column }) => {
+
+    const classes = styles();
+
     return (
-        <Card>
+        <MyCard >
 
-        </Card>
+            <CardMedia
+                component={Img}
+                fluid={fluid}
+            />
+            <CardContent >
+                <Typography
+
+                    variant={"h6"}
+                    gutterBottom
+                >
+                    {title}
+                </Typography>
+                <Typography
+
+                    variant={"h6"}
+                    gutterBottom
+                >
+                    {description}
+                </Typography>
+            </CardContent>
+        </MyCard>
     )
 }
 

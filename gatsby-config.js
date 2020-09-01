@@ -10,11 +10,14 @@ module.exports = {
     `gatsby-plugin-material-ui`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    `gatsby-transformer-remark`,
     {
       resolve: "gatsby-source-filesystem",
       options: {
-        path: `${__dirname}/src/images`,
-        name: "images",
+        path: `${__dirname}/src/data`,
+        name: "data",
       },
-    },],
+    },
+    `gatsby-plugin-mdx`
+  ],
 }

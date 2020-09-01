@@ -17,9 +17,8 @@ import Img from "gatsby-image"
 const useStyles = makeStyles((theme) => ({
     carousel: {
         margin: "0 auto",
-        maxWidth: 800
-    }, [theme.breakpoints.down('md')]: {
-        maxWidth: 500
+
+
     },
     views: {
         maxHeight: 450
@@ -30,10 +29,8 @@ const useStyles = makeStyles((theme) => ({
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
 const Carousel = ({ images }) => {
-
     const classes = useStyles()
 
-    console.log(images)
     const [activeStep, setActiveStep] = useState(0);
 
     const handleNext = () => {
@@ -62,13 +59,7 @@ const Carousel = ({ images }) => {
                             <div key={index} >
                                 {Math.abs(activeStep - index) <= 2 ? (
                                     <Card className={classes.views} >
-                                        <CardMedia >
-                                            <Img
-                                                fluid={item.node.childImageSharp.fluid}
-                                            />
-                                        </CardMedia>
-                                        {/* <CardContent>
-                                        </CardContent> */}
+                                        <CardMedia component={Img} fluid={item.node.childImageSharp.fluid} />
                                     </Card>
                                 ) : null}
                             </div>
