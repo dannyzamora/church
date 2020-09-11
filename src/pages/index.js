@@ -70,7 +70,7 @@ const Home = ({ data }) => {
             The Deacons
       </Typography>
           <Divider className={classes.divider} />
-          <CardList data={data.allMarkdownRemark.edges} />
+          <CardList column={false} data={data.allMarkdownRemark.edges} />
         </Grid>
 
         <Grid item align='center' xs={12}>

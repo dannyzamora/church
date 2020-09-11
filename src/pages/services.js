@@ -10,7 +10,6 @@ import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 
 import CardList from '../components/CardList'
-import Carousel from "../components/Carousel"
 
 const Services = ({ data }) => {
   return (

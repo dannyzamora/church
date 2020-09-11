@@ -22,7 +22,6 @@ function MyGrid(props) {
     return <Grid className={classes.root} {...other} />;
 }
 const CardList = ({ data, column }) => {
-    console.log(column)
     return (
         <MyGrid container item={true} spacing={10} xs={12} justify='center'>
             {data.map((item, index) => {
@@ -39,7 +38,7 @@ const CardList = ({ data, column }) => {
                 } } = item;
                 return (
                     <Grid item key={index}>
-                        <Card column={column} fluid={fluid} title={title} description={description} />
+                        <Card fluid={fluid} column={column} title={title} description={description} />
                     </Grid>
                 )
             })}

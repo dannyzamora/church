@@ -15,28 +15,32 @@ import { red } from '@material-ui/core/colors';
 import Img from "gatsby-image"
 
 const styles = makeStyles({
-    card: {
-        minWidth: 300
-    }
+    card: column => column ?
+        {
+            display: 'flex',
+            width: 600
+
+        } :
+        {
+
+        }
+
 })
 
-const MyCard = (props) => {
-    const classes = styles(props);
-    return <Card className={classes.card} {...props} />
-}
+
 
 const BioCard = ({ fluid, title, description, column }) => {
 
-    const classes = styles();
+    const classes = styles(column);
 
     return (
-        <MyCard >
+        <Card className={classes.card}>
 
             <CardMedia
                 component={Img}
                 fluid={fluid}
             />
-            <CardContent >
+            <CardContent className={classes.content}>
                 <Typography
 
                     variant={"h6"}
@@ -52,7 +56,7 @@ const BioCard = ({ fluid, title, description, column }) => {
                     {description}
                 </Typography>
             </CardContent>
-        </MyCard>
+        </Card>
     )
 }
 
