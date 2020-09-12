@@ -1,5 +1,5 @@
 const React = require("react")
-const Layout = require("./src/components/layout").default
+const Layout = require("./src/components/Layout").default
 const CssBaseline = require('@material-ui/core/CssBaseline').default
 const createMuiTheme = require('@material-ui/core/styles/createMuiTheme').default
 const ThemeProvider = require(`@material-ui/core/styles`).ThemeProvider
