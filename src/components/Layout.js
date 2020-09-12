@@ -1,7 +1,9 @@
 import React, { Fragment } from 'react'
 import NavBar from './NavBar'
 import Footer from './Footer'
-import { ThemeProvider, makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
+
+
 
 
 const useStyles = makeStyles((theme) => ({

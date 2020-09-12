@@ -7,7 +7,15 @@
 module.exports = {
   /* Your site config here */
   plugins: [
-    `gatsby-plugin-material-ui`,
+    {
+      resolve: `gatsby-plugin-material-ui`,
+      options: {
+        stylesProvider: {
+          injectFirst: true,
+        }
+      },
+    },
+    `gatsby-theme-material-ui`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-remark`,
