@@ -7,7 +7,7 @@ import { ThemeProvider, makeStyles } from '@material-ui/core/styles';
 const useStyles = makeStyles((theme) => ({
     layout: {
         display: 'grid',
-        gridTemplateRows: "minmax(70px, auto) 1fr auto",
+        gridTemplateRows: "auto 1fr auto",
         height: '100vh',
 
     }
