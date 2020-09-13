@@ -8,4 +8,4 @@ export const wrapPageElement = ({ element, props }) => {
     return <Layout {...props}>{element}</Layout>
 }
 
-export { wrapRootElement } from "./wrapRootElement.js";
+export { wrapRootElement } from "./wrapRootElement";
